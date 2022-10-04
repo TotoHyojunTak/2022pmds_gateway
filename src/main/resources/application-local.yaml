@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: backend-basic
+          uri: http://localhost:9999/
+          predicates:
+            - Path=/user/**, /health/**
+#          filters:
+#            - StripPrefix=2
+#            - name: AuthorizationFilter
