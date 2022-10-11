@@ -1,9 +1,12 @@
 spring:
+
+
+
   cloud:
     gateway:
       routes:
         - id: backend-basic
-          uri: http://localhost:9999/
+          uri: http://3.36.135.159:9999/
           predicates:
             - Path=/user/**, /health/**
 #          filters:
