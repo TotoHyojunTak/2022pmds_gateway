@@ -3,7 +3,7 @@ spring:
     gateway:
       routes:
         - id: backend-basic
-          uri: http://localhots:9999/
+          uri: http://localhost:9999/
           predicates:
             - Path=/user/**, /health/**
 #          filters:
