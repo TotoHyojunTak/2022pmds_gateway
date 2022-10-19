@@ -2,10 +2,22 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: backend-basic
-          uri: http://localhost:9999/
+        - id: 2022pmds-backend-user
+          uri: lb://2022pmds-backend-user
           predicates:
             - Path=/user/**, /health/**
+        - id: 2022pmds-backend-order
+          uri: lb://2022pmds-backend-order
+          predicates:
+            - Path=/order/**, /health/**
+        - id: 2022pmds-backend-catalog
+          uri: lb://2022pmds-backend-catalog
+          predicates:
+            - Path=/catalog/**, /health/**
+        - id: 2022pmds-frontend
+          uri: lb://2022pmds-frontend
+          predicates:
+            - Path=/health/**
 #          filters:
 #            - StripPrefix=2
 #            - name: AuthorizationFilter
